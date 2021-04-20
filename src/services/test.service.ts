@@ -1,17 +1,26 @@
-import Logger from '../../common/logger';
-import FileSystem from '../../common/file-system/file-system';
-import config from '../../common/config';
+import Logger from '../common/logger';
+import FileSystemService from '../common/file-system/file-system.service';
+import config from '../common/config';
 import path from 'path';
 import randomstring from 'randomstring';
 import {spawn} from 'child_process';
-import ElastalertServer from '../../elastalert_server';
-import { TestRuleOptions } from './test-rule-options.model';
+import ElastalertServer from '../elastalert_server';
 import WebSocket from 'ws';
 
-let logger = new Logger('TestController');
-let fileSystem = new FileSystem();
+// TODO: joi schema
 
-export default class TestController {
+export interface TestRuleOptions {
+  testType: "all" | "schemaOnly" | "countOnly";
+  days: number;
+  alert: boolean;
+  format: "json";
+  maxResults: number;
+}
+
+let logger = new Logger('TestService');
+let fileSystem = new FileSystemService();
+
+export default class TestService {
   private _server: ElastalertServer;
   private _elastalertPath: string;
   private _testFolder: string;

@@ -13,3 +13,5 @@
 13) `metadataHandler` fix `resp.hits.hits.map(h => h._source);`
 14) `metadataHandler` fix `getQueryString` -> `(<any>request.query).rule_name)`
 15) `scripts/replace_templates.sh` probably not needed
+16) Better error handling and documentation - for now global error handling in `elastalert_server.ts` https://tsoa-community.github.io/docs/error-handling.html#setting-up-error-handling
+17) Logging requst change RouteLogger to morgan (https://rsbh.dev/blog/rest-api-with-express-typescript)

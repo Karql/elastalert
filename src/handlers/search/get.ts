@@ -2,9 +2,7 @@ import { Request, Response } from 'express';
 import { getClient } from '../../common/elasticsearch_client';
 
 export default function searchHandler(request: Request, response: Response) {
-  /**
-   * @type {ElastalertServer}
-   */
+
   var client = getClient();
 
   client.search({

@@ -156,10 +156,6 @@ This server exposes the following REST API's:
 
     Where `:action` can be either 'start' or 'stop', which will respectively start or stop the current ElastAlert process.
   
-- **[WIP] GET `/status/errors`**
-
-    When `/status` returns 'ERROR' this returns a list of errors that were triggered.
-  
 - **GET `/rules`**
 
     Returns a list of directories and rules that exist in the `rulesPath` (from the config) and are being run by the ElastAlert process.

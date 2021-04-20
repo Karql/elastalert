@@ -24,13 +24,6 @@ export default function setupRouter(express: Express) {
   });
 
   function _setupRoute(route: Route) {
-    let methodFunctionName = (<string>route.method).toLowerCase();
-
-    express['get']('/dupa',  (req, res) => {});
-
-    express.get('dupa', (req, res) => {})
-
-
     express[<RouteMethod>route.method]('/' + route.path, <RequestHandler>route.handler);
     logger.info('Listening for ' + route.method + ' request on /' + route.path + '.');
   }

@@ -45,7 +45,7 @@ export default function testPostHandler(request: Request, response: Response) {
     sendRequestError(response, body.error);
   }
 
-  server.testController.testRule(body.rule, body.options)
+  server.testService.testRule(body.rule, body.options)
     .then(function (consoleOutput) {
       response.send(consoleOutput);
     })
